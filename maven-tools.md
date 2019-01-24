@@ -1,4 +1,5 @@
 1. Add an external jar to Maven project
+
 SET MVM_PATH=[Maven installation]\bin
 SET LIB_PATH=[Root jar localization]\lib
 SET LOCAL_REPO=[Path to .m2 location]\.m2\\repository
