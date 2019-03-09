@@ -22,3 +22,89 @@ val sfpdDS = spark.read.csv("path to file").as[Incidents]
 
 sfpdDS.createTempView("sfpd")
 ```
+*Details: Load Data*
+
+* spark.read.load(“path/filename.parquet”)
+  
+  * Data type: Parquet (default)
+  * Loads data in path. Default data type is parquet. For other formats, use the load(path).format method. Default data type can be configured using spark.sql.sources.default property.
+
+* spark.read.load(path).format(type)
+  
+  * Data type: JSON, Parquet, CSV
+  * Loads data in path with type specified in the format method.
+
+* spark.read.text
+  
+  * Data type: Text File
+  * Loads a text file and returns Dataset[Row]
+
+* spark.read.textfile
+  
+  * Data type: Text File
+  * Loads a text file and returns Dataset[String]. This method can be used when you want the return type to be Dataset[String] instead of DataFrame (i.e. Dataset[Row])
+
+* spark.read.jdbc(URL, Table, Connection_Properties)
+  * Data type: Database Table
+  * Returns a DataFrame with data from a database table. Used to load data directly from a database table using a JDBC connection.
+
+* spark.read.csv(path_to_CSV_file)
+  * Data type: CSV
+  * Loads CSV data in path. Similar to spark.read.load(path).format("csv")
+
+* spark.read.json(path_to_JSON_file)
+  * Data type: JSON
+  * Loads JSON data in path. Similar to spark.read.load(path).format("json")
+
+* spark.read.parquet(path_to_parquet_file)
+  * Data type: Parquet
+  * Loads parquet data in path. Similar to spark.read.load(path).format("parquet")
+
+* Default data source can be configured here: spark.sql.sources.default
+
+*Creating a Dataframe and Construct Schema Programmatically*
+
+```java
+import org.apache.spark.sql.types._
+
+// Create an RDD
+val peopleRDD = spark.sparkContext.textFile("examples/src/main/resources/people.txt")
+
+// The schema is encoded in a string
+val schemaString = "name;age"
+
+// Generate the schema based on the string of schema
+val fields = schemaString.split(";")
+  .map(fieldName => StructField(fieldName, StringType, nullable = true))
+val schema = StructType(fields)
+/*
+val schema = StructType(Array(
+    StructField("name", StringType, nullable = true),
+    StructField("age", StringType, nullable = true)))
+*/
+
+// Convert records of the RDD (people) to Rows
+val rowRDD = peopleRDD
+  .map(_.split(","))
+  .map(attributes => Row(attributes(0), attributes(1).trim))
+
+// Apply the schema to the RDD
+val peopleDF = spark.createDataFrame(rowRDD, schema)
+
+// Creates a temporary view using the DataFrame
+peopleDF.createOrReplaceTempView("people")
+
+// SQL can be run over a temporary view created using DataFrames
+val results = spark.sql("SELECT name FROM people")
+
+// The results of SQL queries are DataFrames and support all the normal RDD operations
+// The columns of a row in the result can be accessed by field index or by field name
+results.map(attributes => "Name: " + attributes(0)).show()
+// +-------------+
+// |        value|
+// +-------------+
+// |Name: Michael|
+// |   Name: Andy|
+// | Name: Justin|
+// +-------------+
+```
