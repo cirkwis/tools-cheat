@@ -108,3 +108,21 @@ results.map(attributes => "Name: " + attributes(0)).show()
 // | Name: Justin|
 // +-------------+
 ```
+
+*Convert DataFrames to Datasets*
+
+![alt text](./spark-3.png "Convert DataFrames to Datasets")
+
+*Convert DataFrames to Datasets with nested document*
+```java
+case class Metric(m1: String, m2: String, m3: String)
+
+case class Dimension(d1: String, d2: String, d3: String, metric: Metric)
+
+import org.apache.spark.sql.functions.struct
+import spark.implicits._
+
+...
+
+df.select($"d1", $"d2", $"d3", struct($"m1", $"m2", $"m3").alias("metric")).as[Dimension]
+```
