@@ -126,3 +126,23 @@ import spark.implicits._
 
 df.select($"d1", $"d2", $"d3", struct($"m1", $"m2", $"m3").alias("metric")).as[Dimension]
 ```
+
+*User Defined Functions*
+  
+* Two types of UDFs:
+  * used with scala (dataset operations)
+  * used with sql
+
+* Defining UDF: 
+ ```python 
+  val udfDefined = udf((arguments) => {function definition})
+```
+
+![alt text](./spark-4.png "UDF: Scala")
+
+*UDF: SQL*
+
+ ```python 
+  spark.udf.register("function name",function definition)
+```
+![alt text](./spark-5.png "UDF: SQL")
