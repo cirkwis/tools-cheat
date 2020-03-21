@@ -1,0 +1,71 @@
+{
+  "type": "record",
+  "name": "grc_pm",
+  "namespace": "sg.cbs.avro",
+  "fields": [
+    {
+      "name": "identifier",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+
+    {
+      "name": "legal_name_90c",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "type_de_lien",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+   {
+      "name":"type_de_lien_economique",
+      "type":[
+        "null",
+        "string"
+      ]
+    },
+   {
+      "name":"nature_droits",
+      "type":[
+        "null",
+        "string"
+      ]
+    },
+   {
+      "name":"pourc_detention",
+      "type":[
+        "null",
+        "string"
+      ]
+    },
+   {
+      "name":"rct_identifier",
+      "type":[
+        "null",
+        "string"
+      ]
+    },
+    {
+       "name":"statut_tiers_pm",
+       "type":[
+         "null",
+         "string"
+       ]
+     },
+    {
+       "name":"type_tiers_pm",
+       "type":[
+         "null",
+         "string"
+       ]
+     }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "grc_add_holder",
+  "namespace": "sg.cbs.avro",
+  "fields": [
+    {
+      "name": "name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "percentage",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+    ]
+}

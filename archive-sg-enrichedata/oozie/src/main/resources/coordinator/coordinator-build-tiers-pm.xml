@@ -1,0 +1,36 @@
+<coordinator-app name="CBS - Coord - BusinessViews - Build - Tiers - pm" frequency="${frequency_build_tiers}"
+	start="${startDate}" end="${endDate}" timezone="Europe/Paris" xmlns="uri:oozie:coordinator:0.2">	
+      <controls>
+        <timeout>${timeout_build_tiers}</timeout>
+		<concurrency>${concurrency_level}</concurrency>
+      </controls>
+
+    <action>
+		<workflow>
+        <app-path>${pom.businessviews.hdfs.oozie.workflow_dir}/workflow-build-tiers-pm.xml</app-path>
+		<configuration>
+			<property>
+				<name>appName</name>
+				<value>[CBS-Wkf-BusinessViews-Build-Tiers-${appEnv}]</value>
+			</property>
+			<property>
+				<name>master</name>
+				<value>${master}</value>
+			</property>
+			<property>
+				<name>deploy</name>
+				<value>${deploy}</value>
+			</property>
+			<property>
+				<name>queue</name>
+				<value>${queue}</value>
+			</property>
+			<property>
+				<name>partitionId</name>
+				<value>yyyy=${coord:formatTime(coord:actualTime(),'YYYY')}/mm=${coord:formatTime(coord:actualTime(),'MM')}/dd=${coord:formatTime(coord:actualTime(),'dd')}</value>
+			</property>
+        </configuration>
+      </workflow>
+   </action>
+
+</coordinator-app>

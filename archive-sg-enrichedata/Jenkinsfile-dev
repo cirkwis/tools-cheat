@@ -1,0 +1,172 @@
+// lien vers git en https
+final	String	GIT_LINK 			=	'https://sgithub.fr.world.socgen/BSC-A2744/businessviews.git'
+
+// nom de la branche à récupérer
+final	String	BRANCH_NAME 		= 	'dev'
+
+// nom du dossier dans le repository dans lequel se trouve le projet
+final	String	DIRECTORY 			= 	'.'
+
+// valeur donnée par Sofa pour accéder à ses credentials AnsibleTower
+final	String	CREDENTIALS_ID 		= 	'jenkins_cbs_bv'
+
+// trigramme de votre projet
+final	String	TRIGRAMME 			= 	'CBS'
+
+// nom du job ansible
+final	String	ANSIBLE_JOB_NAME	= 	'JOB_HAD_CBS_BV_DD'
+
+// chemin depuis la racine du repo vers votre pom.xml
+final	String	PATH_TO_POM 		=	'pom.xml'
+
+
+
+stage ("\u274B Checkout Sources")
+        {
+            node ('linux')
+                    {
+                        checkoutSource(GIT_LINK, BRANCH_NAME)
+                    }
+        }
+
+stage ("\u274B Run Tests (Unit Tests) on $BRANCH_NAME")
+        {
+            node ('linux')
+                    {
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    dir(DIRECTORY)
+                                            {
+                                                sh "mvn clean test"
+                                            }
+                                }
+                    }
+        }
+
+
+stage ("\u274B Increment snapshot version")
+        {
+            node ('linux')
+                    {
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        def tag = "v" + version(PATH_TO_POM)
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    dir(DIRECTORY)
+                                            {
+                                                echo  "Starting tagging $tag "
+                                                //sh "pwd; ls -lrt; chmod +x ./_version/increment_snapshot.sh"
+                                                //sh "./_version/increment_snapshot.sh"
+                                            }
+                                }
+                    }
+        }
+
+
+stage ("\u274B Checkout Tag")
+        {
+            node ('linux')
+                    {
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        def tagVersion = "v" + version(PATH_TO_POM)
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    dir(DIRECTORY)
+                                            {
+                                                //sh "git checkout $tagVersion"
+                                            }
+                                }
+                    }
+        }
+
+stage ("\u274B Build/Compile")
+        {
+            node ('linux')
+                    {
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    dir(DIRECTORY)
+                                            {
+                                                sh "mvn clean compile"
+                                            }
+                                    stash excludes: 'target/', includes: '**/*', name: 'source'
+                                }
+                    }
+        }
+
+stage ("\u274B Run Tests (Unit Tests) after tag")
+        {
+            node ('linux')
+                    {
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    deleteDir()
+                                    unstash 'source'
+                                    dir(DIRECTORY)
+                                            {
+                                                sh "mvn clean test"
+                                            }
+                                }
+                    }
+        }
+
+stage ("\u274B Run Code Source Analysis")
+        {
+            node ('linux')
+                    {
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    dir(DIRECTORY)
+                                            {
+                                                withSonarQubeEnv
+                                                        {
+                                                            sh "mvn clean scoverage:report -DskipTests"
+                                                            sh "mvn sonar:sonar -P sonar,!local -Dsonar.branch=${BRANCH_NAME} -DskipTests"
+                                                        }
+                                            }
+                                }
+                    }
+        }
+
+
+
+stage ("\u274B Archive/Install Artifacts (Nexus)")
+        {
+            node ('linux')
+                    {
+                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                {
+                                    dir(DIRECTORY)
+                                            {
+                                                sh "mvn clean deploy -P dev,!local -DskipTests"
+                                            }
+                                }
+                    }
+        }
+
+
+
+def version(String path_to_pom)
+{
+    def pom = readMavenPom file: path_to_pom
+    def version = pom.version
+    version
+}
+
+
+def checkoutSource(String scm, String branch)
+{
+    git branch: branch, url: scm
+}

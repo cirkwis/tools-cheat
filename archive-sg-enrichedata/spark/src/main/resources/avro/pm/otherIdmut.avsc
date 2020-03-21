@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "other_idmut",
+  "namespace": "sg.cbs.avro",
+  "fields": [
+    {
+      "name": "idmut_tymulti",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "idmut_vamulti",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

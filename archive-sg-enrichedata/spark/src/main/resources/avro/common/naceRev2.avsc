@@ -1,0 +1,42 @@
+{
+  "type": "record",
+  "name": "nace_rev_2",
+  "namespace": "sg.cbs.avro",
+  "fields": [
+    {
+      "name": "section",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "division",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "groupe",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "classe",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sous_classe",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

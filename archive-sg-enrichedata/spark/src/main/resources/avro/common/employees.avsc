@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "employees",
+  "namespace": "sg.cbs.avro.rn",
+  "fields": [
+    {
+      "name": "total_range_year",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "total_range_low",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "total_range_high",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

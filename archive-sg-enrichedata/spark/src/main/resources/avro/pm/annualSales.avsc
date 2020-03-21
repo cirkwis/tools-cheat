@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "annual_sale",
+  "namespace": "sg.cbs.avro",
+  "fields": [
+    {
+      "name": "year",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "value",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5739 @@
+
+{
+	"type": "record",
+	"name": "third_party",
+	"namespace": "sg.cbs.avro",
+	"fields": [
+		{
+			"name": "unique_id",
+			"type": "string"
+		},
+		{
+			"name": "id",
+			"type": "string"
+		},
+		{
+			"name": "version",
+			"type": "int"
+		},
+		{
+			"name": "matched_ids",
+			"type": {
+				"type": "map",
+				"values": "string"
+			}
+		},
+		{
+			"name": "matched_datasources",
+			"type": {
+				"type": "array",
+				"items": "string"
+			}
+		},
+		{
+        	"name": "scoring_matched_datasources",
+        	"type": "int"
+        },
+		{
+			"name": "acquiring_le_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "acquiring_le_identifier"
+				}
+			]
+		},
+		{
+			"name": "acronym",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "acronym"
+				},
+				{
+					"dataSource": "dun",
+					"fieldName": "acronym"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "acronym"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "acronym"
+				}
+			]
+		},
+		{
+			"name": "activity_follow_up_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "activity_follow_up_code"
+				}
+			]
+		},
+		{
+			"name": "address_du",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "address_du"
+				}
+			]
+		},
+		{
+			"name": "address_gu",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "address_gu"
+				}
+			]
+		},
+		{
+			"name": "address_hq",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "address_hq"
+				}
+			]
+		},
+		{
+			"name": "annual_sales_local",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "local_annual_sales"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "annual_sales_local"
+				}
+			]
+		},
+		{
+			"name": "ape_insee5_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "ape_insee5_code"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "ape_insee5_code"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "ape_insee5_code"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "ape_insee5_code"
+				}
+			]
+		},
+		{
+			"name": "ape5_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "ape5_code"
+				}
+			]
+		},
+		{
+			"name": "big_regulatory_risk_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "big_regulatory_risk_code"
+				}
+			]
+		},
+		{
+			"name": "business_expiry_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "business_expiry_date"
+				}
+			]
+		},
+		{
+			"name": "business_name_du",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "business_name_du"
+				}
+			]
+		},
+		{
+			"name": "business_name_gu",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "business_name_gu"
+				}
+			]
+		},
+		{
+			"name": "business_name_hq",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "business_name_hq"
+				}
+			]
+		},
+		{
+			"name": "chief_executive_officer_title",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "chief_executive_officer_title"
+				}
+			]
+		},
+		{
+			"name": "city",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "sk",
+					"fieldName": "city"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "city"
+				}
+			]
+		},
+		{
+			"name": "client_type",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "client_type"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "client_type"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "client_type"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "client_type"
+				}
+			]
+		},
+		{
+			"name": "commercial_follow_up_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "commercial_follow_up_code"
+				}
+			]
+		},
+		{
+			"name": "complement_dest_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "complement_dest_address"
+				}
+			]
+		},
+		{
+			"name": "continent",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "continent"
+				}
+			]
+		},
+		{
+			"name": "currency_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "currency_code"
+				}
+			]
+		},
+		{
+			"name": "delegated_pcru",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "delegated_pcru"
+				}
+			]
+		},
+		{
+			"name": "dest_country_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "dest_country_code"
+				},
+				{
+					"dataSource": "dun",
+					"fieldName": "dest_country"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "dest_country_code"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "dest_country"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "headquarters_address_country_code"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "dest_country_code"
+				},
+				{
+					"dataSource": "sk",
+					"fieldName": "dest_country_code"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "dest_country_code"
+				}
+			]
+		},
+		{
+			"name": "headquarters_address_country_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "headquarters_address_country_code"
+				}
+			]
+		},
+
+		{
+			"name": "dest_country_du",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "dest_country_du"
+				}
+			]
+		},
+		{
+			"name": "dest_country_gu",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "dest_country_gu"
+				}
+			]
+		},
+		{
+			"name": "dest_country_hq",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "dest_country_hq"
+				}
+			]
+		},
+		{
+			"name": "dun_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "dun_id"
+				},
+				{
+					"dataSource": "rct",
+					"fieldName": "dun_id"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "dun_id"
+				}
+			]
+		},
+		{
+			"name": "duns_number_du",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "duns_number_du"
+				}
+			]
+		},
+		{
+			"name": "duns_number_gu",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "duns_number_gu"
+				}
+			]
+		},
+		{
+			"name": "duns_number_hq",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "duns_number_hq"
+				}
+			]
+		},
+		{
+			"name": "elr_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "elr_code"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "elr_code"
+				}
+			]
+		},
+		{
+			"name": "elr_legal_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "elr_legal_name"
+				}
+			]
+		},
+		{
+			"name": "elr_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "elr_status"
+				}
+			]
+		},
+		{
+			"name": "employees_here",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "long"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "employees_here"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "employees_here"
+				}
+			]
+		},
+		{
+			"name": "employees_total",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "total_employees"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "employees_total"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "employees_total"
+				}
+			]
+		},
+		{
+			"name": "end_relationship_reason_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "end_relationship_reason_code"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "end_relationship_reason_code"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "end_relationship_reason_code"
+				}
+			]
+		},
+		{
+			"name": "family_members_number_gu",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "family_members_number_gu"
+				}
+			]
+		},
+		{
+			"name": "family_update_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "family_update_date"
+				}
+			]
+		},
+		{
+			"name": "fatca_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "idmut_vamulti"
+				}
+			]
+		},
+		{
+			"name": "flagprud",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "flagprud"
+				}
+			]
+		},
+		{
+			"name": "group_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "group_name"
+				}
+			]
+		},
+		{
+			"name": "group_nationality_country",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "group_nationality_country"
+				}
+			]
+		},
+		{
+			"name": "group_nessg_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "group_nessg_code"
+				}
+			]
+		},
+		{
+			"name": "group_number_legal_entities",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "group_number_legal_entities"
+				},
+				{
+					"dataSource": "rct",
+					"fieldName": "group_number_legal_entities"
+				}
+			]
+		},
+		{
+			"name": "group_number_subgroups",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "group_number_subgroups"
+				}
+			]
+		},
+		{
+			"name": "group_ultimate_parent_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "group_ultimate_parent_id"
+				}
+			]
+		},
+		{
+			"name": "identification_dest_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "identification_dest_address"
+				}
+			]
+		},
+		{
+			"name": "identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "identifier"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "identifier"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "identifier"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "bdr_id"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "identifier"
+				}
+			]
+		},
+		{
+			"name": "le_group_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "le_group_id"
+				}
+			]
+		},
+		{
+			"name": "le_subgroup_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "le_subgroup_id"
+				}
+			]
+		},
+		{
+			"name": "legal_category_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "legal_category_code"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "legal_category_code"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "legal_category_code"
+				},
+                {
+                      "dataSource": "grc_pm",
+                      "fieldName": "legal_category_code"
+                }
+			]
+		},
+		{
+			"name": "legal_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "legal_name"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "legal_name"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "legal_name"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "bdr_id"
+				}
+			]
+		},
+		{
+			"name": "legal_situation_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "legal_situation_code"
+				},
+				{
+					"dataSource": "dun",
+					"fieldName": "legal_situation_code"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "legal_situation"
+				},
+				{
+                	"dataSource": "insee",
+                	"fieldName": "legal_situation"
+                },
+                {
+                    "dataSource": "lei",
+                	"fieldName": "legal_situation"
+                },
+                {
+                    "dataSource": "avox",
+                	"fieldName": "legal_situation_code"
+                },
+                {
+                    "dataSource": "infogreffe",
+                	"fieldName": "legal_situation"
+                }
+			]
+		},
+		{
+			"name": "lei_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "lei_id"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "lei_id"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "lei_id"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "lei_id"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "lei_id"
+				}
+			]
+		},
+		{
+			"name": "list_follow_up_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "list_follow_up_code"
+				}
+			]
+		},
+		{
+			"name": "magnitude_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "magnitude_id"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "magnitude_id"
+				}
+			]
+		},
+		{
+			"name": "mailing_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "mailing_address"
+				}
+			]
+		},
+		{
+			"name": "naer5_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "naer5_code"
+				},
+				{
+					"dataSource": "rct",
+					"fieldName": "naer5_code"
+				},
+				{
+					"dataSource": "idq",
+					"fieldName": "naer5_code"
+				},
+				{
+					"dataSource": "idq",
+					"fieldName": "nae_rev_code"
+				}
+			]
+		},
+		{
+			"name": "nessg_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "nessg_code"
+				}
+			]
+		},
+		{
+			"name": "network_relations",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.network_relation"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "network_relations"
+				}
+			]
+		},
+		{
+			"name": "operational_center",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "operational_center"
+				}
+			]
+		},
+		{
+			"name": "other_idmut",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.other_idmut"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "other_idmut"
+				}
+			]
+		},
+		{
+			"name": "other_national_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "other_national_id"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "other_national_id"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "other_national_id"
+				},
+				{
+					"dataSource": "sk",
+					"fieldName": "other_national_id"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "other_national_id"
+				}
+			]
+		},
+		{
+			"name": "out_business_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "out_business_date"
+				}
+			]
+		},
+		{
+			"name": "payments_suspension_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "payments_suspension_date"
+				}
+			]
+		},
+		{
+			"name": "pcru_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "pcru_code"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "pcru_code"
+				}
+			]
+		},
+		{
+			"name": "physical_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "physical_address"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "physical_address"
+				}
+			]
+		},
+		{
+			"name": "post_office_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "post_office_address"
+				}
+			]
+		},
+		{
+			"name": "principal_operating_entity_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "principal_operating_entity_code"
+				}
+			]
+		},
+		{
+			"name": "profitability_study",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "profitability_study"
+				}
+			]
+		},
+		{
+			"name": "registered_address_indicator",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "registered_address_indicator"
+				}
+			]
+		},
+		{
+			"name": "registration_entity",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "registration_entity"
+				}
+			]
+		},
+		{
+			"name": "relationship_end_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "relationship_end_date"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "relationship_end_date"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "relationship_end_date"
+				}
+			]
+		},
+		{
+			"name": "relationship_start_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "relationship_start_date"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "relationship_start_date"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "relationship_start_date"
+				}
+			]
+		},
+		{
+			"name": "relationship_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "relationship_status"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "relationship_status"
+				}
+			]
+		},
+		{
+			"name": "relationship_type_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "relationship_type_status"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "relationship_type_status"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "relationship_type_status"
+				}
+			]
+		},
+		{
+			"name": "report_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "report_date"
+				}
+			]
+		},
+		{
+			"name": "risk_unit",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "risk_unit"
+				}
+			]
+		},
+		{
+			"name": "sic_cod_1987_2",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "sic_cod_1987_2"
+				}
+			]
+		},
+		{
+			"name": "sic_cod_1987_3",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "sic_cod_1987_3"
+				}
+			]
+		},
+		{
+			"name": "sic_cod_1987_4",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "sic_cod_1987_4"
+				}
+			]
+		},
+		{
+			"name": "sic_cod_1987_5",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "sic_cod_1987_5"
+				}
+			]
+		},
+		{
+			"name": "sic_cod_1987_6",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "sic_cod_1987_6"
+				}
+			]
+		},
+		{
+			"name": "sic_code_1987",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "sic_code_1987"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "sic_code_1987"
+				}
+			]
+		},
+		{
+			"name": "siret",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "siret"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "siret"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "siret"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "siret"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "siret_id"
+				}
+			]
+		},
+		{
+			"name": "status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "status"
+				}
+			]
+		},
+		{
+			"name": "statutory_third_parties_cat_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "statutory_third_parties_cat_code"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "ctr_code"
+				}
+			]
+		},
+		{
+			"name": "stp_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "stp_id"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "stp_id"
+				}
+			]
+		},
+		{
+			"name": "subgroup_leader_entity_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "subgroup_leader_entity_id"
+				}
+			]
+		},
+		{
+			"name": "subgroup_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "subgroup_name"
+				}
+			]
+		},
+		{
+			"name": "subgroup_nationality_country",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "subgroup_nationality_country"
+				}
+			]
+		},
+		{
+			"name": "subgroup_nessg_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "subgroup_nessg_code"
+				}
+			]
+		},
+		{
+			"name": "subgroup_number_legal_entities",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "subgroup_number_legal_entities"
+				}
+			]
+		},
+		{
+			"name": "subsidiary",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "subsidiary"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "subsidiary"
+				}
+			]
+		},
+		{
+			"name": "swift_number",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "swift_number"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "swift_number"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "swift_number"
+				}
+			]
+		},
+		{
+			"name": "technical_follow_up",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "technical_follow_up"
+				}
+			]
+		},
+		{
+			"name": "top_embargo",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "top_embargo"
+				}
+			]
+		},
+		{
+			"name": "transverse_follow_up",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "transverse_follow_up"
+				}
+			]
+		},
+		{
+			"name": "us_dol_annual_sales",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "long"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "us_dol_annual_sales"
+				}
+			]
+		},
+		{
+			"name": "company_creation_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "company_creation_date"
+				},
+				{
+					"dataSource": "dun",
+					"fieldName": "creation_date"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "company_creation_date"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "company_creation_date"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "company_creation_date"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "company_creation_date"
+				}
+			]
+		},
+		{
+			"name": "headquarters_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "sk",
+					"fieldName": "headquarters_address"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "headquarters_address"
+				}
+			]
+		},
+		{
+			"name": "legal_form",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "dun",
+					"fieldName": "legal_form"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "legal_form"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "legal_form"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "legal_form"
+				},
+               {
+                       "dataSource": "grc_pm",
+                      "fieldName": "legal_form"
+               },
+               {
+                       "dataSource": "sk",
+                      "fieldName": "legal_form"
+               },
+               {
+                       "dataSource": "cz",
+                      "fieldName": "legal_form"
+               }
+			]
+		},
+		{
+			"name": "headquarters_address_complement_geo",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "headquarters_address_complement_geo"
+				}
+			]
+		},
+		{
+			"name": "headquarters_address_numero_voie",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "headquarters_address_numero_voie"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "headquarters_address_numero_voie"
+				}
+			]
+		},
+		{
+			"name": "headquarters_address_lieu_dit",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "headquarters_address_lieu_dit"
+				}
+			]
+		},
+		{
+			"name": "headquarters_address_code_postal",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "headquarters_address_code_postal"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "headquarters_address_code_postal"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "headquarters_address_code_postal"
+				},
+                {
+                    "dataSource": "sk",
+                    "fieldName": "headquarters_address_code_postal"
+                }
+			]
+		},
+		{
+			"name": "headquarters_address_locality",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "headquarters_address_locality"
+				}
+			]
+		},
+		{
+			"name": "legal_name_90c",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "dun",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "legal_name"
+				},
+				{
+					"dataSource": "sk",
+					"fieldName": "legal_name_90c"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "legal_name_90c"
+				}
+			]
+		},
+		{
+			"name": "siren_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "rct",
+					"fieldName": "siren_identifier"
+				},
+				{
+					"dataSource": "dun",
+					"fieldName": "siren"
+				},
+				{
+					"dataSource": "insee",
+					"fieldName": "siren_identifier"
+				},
+				{
+					"dataSource": "lei",
+					"fieldName": "siren"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "siren_identifier"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "siren_identifier"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "siren"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "siren_identifier"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "siren_identifier"
+				}
+			]
+		},
+		{
+			"name": "brand",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "brand"
+				}
+			]
+		},
+		{
+			"name": "business_category",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "business_category"
+				}
+			]
+		},
+		{
+			"name": "database_deletion_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "database_deletion_date"
+				}
+			]
+		},
+		{
+			"name": "dest_country",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "dest_country"
+				},
+				{
+					"dataSource": "perle",
+					"fieldName": "dest_country"
+				}
+			]
+		},
+		{
+			"name": "establishment_activity",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "establishment_activity"
+				}
+			]
+		},
+		{
+			"name": "establishment_activity_nature",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "establishment_activity_nature"
+				}
+			]
+		},
+		{
+			"name": "monoactivity_index",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "monoactivity_index"
+				}
+			]
+		},
+		{
+			"name": "office_type",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "insee",
+					"fieldName": "office_type"
+				}
+			]
+		},
+		{
+			"name": "legal_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "lei",
+					"fieldName": "legal_address"
+				}
+			]
+		},
+		{
+			"name": "lei_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "lei",
+					"fieldName": "lei_status"
+				}
+			]
+		},
+		{
+			"name": "lei_lou_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "lei",
+					"fieldName": "lei_lou_id"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "lei_lou_id"
+				}
+			]
+		},
+		{
+			"name": "archived",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "archived"
+				}
+			]
+		},
+		{
+			"name": "business_line_supervision_pole",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "business_line_supervision_pole"
+				}
+			]
+		},
+		{
+			"name": "elr_perimeter",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "string"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "elr_perimeter"
+				}
+			]
+		},
+		{
+			"name": "financial_supervisor",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "financial_supervisor"
+				}
+			]
+		},
+		{
+			"name": "operational_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "operational_address"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "operational_address"
+				}
+			]
+		},
+		{
+			"name": "res_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "res_id"
+				}
+			]
+		},
+		{
+			"name": "structure_type_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "structure_type_id"
+				}
+			]
+		},
+		{
+			"name": "supervision_department_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "supervision_department_id"
+				}
+			]
+		},
+		{
+			"name": "supervision_sub_department_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "supervision_sub_department_id"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_1",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "trade_as_name_1"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_1"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "trader_name"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "trade_as_name"
+				}
+			]
+		},
+		{
+			"name": "date_of_dissolution",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "date_of_dissolution"
+				},
+				{
+					"dataSource": "avox",
+					"fieldName": "date_of_dissolution"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "deregistration_date"
+				}
+			]
+		},
+		{
+			"name": "registry_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "perle",
+					"fieldName": "registry_name"
+				},
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "registry_name"
+				}
+			]
+		},
+		{
+			"name": "avid",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "avid"
+				}
+			]
+		},
+		{
+			"name": "company_website",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "company_website"
+				}
+			]
+		},
+		{
+			"name": "entity_type",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "entity_type"
+				}
+			]
+		},
+		{
+			"name": "immediate_parent_avid",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "immediate_parent_avid"
+				}
+			]
+		},
+		{
+			"name": "immediate_parent_country",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "immediate_parent_country"
+				}
+			]
+		},
+		{
+			"name": "immediate_parent_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "immediate_parent_name"
+				}
+			]
+		},
+		{
+			"name": "lou_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "lou_status"
+				}
+			]
+		},
+		{
+			"name": "nace_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "nace_code"
+				},
+				{
+					"dataSource": "cz",
+					"fieldName": "nace_code"
+				},
+				{
+					"dataSource": "sk",
+					"fieldName": "nace_code"
+				}
+
+			]
+		},
+		{
+			"name": "nace_rev_2_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "nace_rev_2_code"
+				}
+			]
+		},
+		{
+			"name": "nace_rev_2_descr",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "nace_rev_2_descr"
+				}
+			]
+		},
+		{
+			"name": "naics_2002_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "naics_2002_code"
+				}
+			]
+		},
+		{
+			"name": "naics_2002_descr",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "naics_2002_descr"
+				}
+			]
+		},
+		{
+			"name": "naics_2012_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "naics_2012_code"
+				}
+			]
+		},
+		{
+			"name": "naics_2012_descr",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "naics_2012_descr"
+				}
+			]
+		},
+		{
+			"name": "previous_name_1",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_1"
+				}
+			]
+		},
+		{
+			"name": "previous_name_10",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_10"
+				}
+			]
+		},
+		{
+			"name": "previous_name_11",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_11"
+				}
+			]
+		},
+		{
+			"name": "previous_name_2",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_2"
+				}
+			]
+		},
+		{
+			"name": "previous_name_3",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_3"
+				}
+			]
+		},
+		{
+			"name": "previous_name_4",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_4"
+				}
+			]
+		},
+		{
+			"name": "previous_name_5",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_5"
+				}
+			]
+		},
+		{
+			"name": "previous_name_6",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_6"
+				}
+			]
+		},
+		{
+			"name": "previous_name_7",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_7"
+				}
+			]
+		},
+		{
+			"name": "previous_name_8",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_8"
+				}
+			]
+		},
+		{
+			"name": "previous_name_9",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "previous_name_9"
+				}
+			]
+		},
+		{
+			"name": "registered_agent_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "registered_agent_name"
+				}
+			]
+		},
+		{
+			"name": "regulated_by",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "regulated_by"
+				}
+			]
+		},
+		{
+			"name": "regulatory_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "regulatory_id"
+				}
+			]
+		},
+		{
+			"name": "sic_descr_1987",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "sic_descr_1987"
+				}
+			]
+		},
+		{
+			"name": "tax_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "tax_id"
+				},
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "tax_id"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_10",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_10"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_11",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_11"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_2",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_2"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_3",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_3"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_4",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_4"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_5",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_5"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_6",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_6"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_7",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_7"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_8",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_8"
+				}
+			]
+		},
+		{
+			"name": "trade_as_name_9",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "trade_as_name_9"
+				}
+			]
+		},
+		{
+			"name": "ultimate_parent_avid",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "ultimate_parent_avid"
+				}
+			]
+		},
+		{
+			"name": "ultimate_parent_country",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "ultimate_parent_country"
+				}
+			]
+		},
+		{
+			"name": "ultimate_parent_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "avox",
+					"fieldName": "ultimate_parent_name"
+				}
+			]
+		},
+		{
+			"name": "assets_country_localisation",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "assets_country_localisation"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "assets_country_localisation"
+				}
+			]
+		},
+		{
+			"name": "cav_account_number",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "cav_account_number"
+				}
+			]
+		},
+		{
+			"name": "compliance_3c_top",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "compliance_status"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "compliance_status"
+				}
+			]
+		},
+		{
+			"name": "country_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "country_code"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "authorization_to_deal_country_EL"
+				}
+			]
+		},
+		{
+			"name": "csm_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "csm_code"
+				}
+			]
+		},
+		{
+       		"name": "dec_code",
+       		"type": [
+       			"null",
+       			{
+       				"type": "map",
+       				"values": "string"
+       			}
+       		],
+       		"from": [
+       			{
+       				"dataSource": "grc_pm",
+       				"fieldName": "dec_code"
+       			}
+       		]
+        },
+        {
+        	"name": "dr_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "dr_code"
+        		}
+        	]
+        },
+		{
+			"name": "dec_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "dec_name"
+				}
+			]
+		},
+		{
+			"name": "dr_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "dr_name"
+				}
+			]
+		},
+		{
+			"name": "group_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "group_identifier"
+				}
+			]
+		},
+		{
+			"name": "group_parent_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "group_parent_identifier"
+				}
+			]
+		},
+		{
+			"name": "group_parent_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "group_parent_name"
+				}
+			]
+		},
+		{
+			"name": "group_role",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "group_role"
+				}
+			]
+		},
+		{
+			"name": "grouping_type",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "grouping_type"
+				}
+			]
+		},
+		{
+			"name": "managing_desk",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "managing_desk"
+				}
+			]
+		},
+		{
+			"name": "naf_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "naf_code"
+				},
+				{
+					"dataSource": "bdr",
+					"fieldName": "nae_code"
+				}
+			]
+		},
+		{
+			"name": "pp_first_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "pp_first_name"
+				}
+			]
+		},
+		{
+			"name": "pp_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "pp_identifier"
+				}
+			]
+		},
+		{
+			"name": "pp_last_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "pp_last_name"
+				}
+			]
+		},
+		{
+			"name": "risk_cotation_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "risk_cotation_code"
+				}
+			]
+		},
+		{
+			"name": "risk_label",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "risk_label"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "risk_label"
+				}
+			]
+		},
+		{
+			"name": "service_legal_entity_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "service_legal_entity_code"
+				}
+			]
+		},
+		{
+			"name": "service_start_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "service_start_date"
+				}
+			]
+		},
+		{
+			"name": "service_uniquiness_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "service_uniquiness_code"
+				}
+			]
+		},
+		{
+			"name": "ssr_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "ssr_code"
+				}
+			]
+		},
+		{
+			"name": "ape_insee5_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "ape_insee5_name"
+				}
+			]
+		},
+		{
+			"name": "business_listing",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "business_listing"
+				}
+			]
+		},
+		{
+			"name": "registry_address",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "registry_address"
+				}
+			]
+		},
+		{
+			"name": "registry_local_site",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "registry_local_site"
+				}
+			]
+		},
+		{
+			"name": "workforce",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.workforce"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "workforce"
+				}
+			]
+		},
+		{
+			"name": "profit",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.profit"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "profit"
+				}
+			]
+		},
+		{
+			"name": "as_bracket",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.as_bracket"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "infogreffe",
+					"fieldName": "as_bracket"
+				}
+			]
+		},
+		{
+			"name": "scoring_is_parent_company",
+			"type": "int"
+		},
+		{
+        			"name": "is_parent_company",
+        			"type": [
+        				"null",
+        				{
+        					"type": "map",
+        					"values": "boolean"
+        				}
+        			],
+        			"from": [
+        				{
+        					"dataSource": "rct",
+        					"fieldName": "is_parent_company"
+        				}
+        			]
+        		},
+		{
+			"name": "duplicate_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "idq",
+					"fieldName": "duplicate_id"
+				}
+			]
+		},
+		{
+			"name": "duplicates_number",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "idq",
+					"fieldName": "duplicates_number"
+				}
+			]
+		},
+		{
+			"name": "pp",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.grc_pp"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "pp"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "pp"
+				}
+			]
+		},
+		{
+        	"name": "add_holder",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": {
+        				"type": "array",
+        				"items": "sg.cbs.avro.grc_add_holder"
+        			}
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "add_holder"
+        		}
+        	]
+        },
+        {
+        	"name": "holder",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": {
+        				"type": "array",
+        				"items": "sg.cbs.avro.grc_holder"
+        			}
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "holder"
+        		}
+        	]
+        },
+		{
+			"name": "party_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "identifier"
+				}
+			]
+		},
+		{
+			"name": "mnemonic",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "mnemonic_code"
+				}
+			]
+		},
+		{
+			"name": "isin_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "isin_code"
+				}
+			]
+		},
+		{
+			"name": "golden_bdr_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "golden_id"
+				}
+			]
+		},
+		{
+			"name": "primary_role",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "primary_role_mnemonic"
+				}
+			]
+		},
+		{
+			"name": "secondary_role",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "secondary_role_mnemonic"
+				}
+			]
+		},
+		{
+			"name": "activity_sector",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "activity_sector"
+				}
+			]
+		},
+		{
+			"name": "managing_entity",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "managing_entity"
+				}
+			]
+		},
+		{
+			"name": "inactivation_reason_input_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "input_inactiv_reason"
+				}
+			]
+		},
+		{
+			"name": "inactivation_reason_output_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "output_inactiv_reason"
+				}
+			]
+		},
+		{
+			"name": "ent_fund",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "ent_fund"
+				}
+			]
+		},
+		{
+			"name": "listed",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "listed"
+				}
+			]
+		},
+		{
+			"name": "app_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "app_code"
+				}
+			]
+		},
+		{
+			"name": "sensitivity_rank_le",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "sensitivity_rank"
+				}
+			]
+		},
+		{
+			"name": "country_le",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "country_le"
+				}
+			]
+		},
+		{
+			"name": "local_status_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "local_status_el"
+				}
+			]
+		},
+		{
+			"name": "last_review_date_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "last_review_date_el"
+				}
+			]
+		},
+		{
+			"name": "authorization_to_deal_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "authorization_to_deal_el"
+				}
+			]
+		},
+		{
+			"name": "approved_trading_type_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "approved_trading_type_el"
+				}
+			]
+		},
+		{
+			"name": "follow_up_sector_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "follow_up_sector_id"
+				}
+			]
+		},
+		{
+			"name": "follow_up_class_id",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "follow_up_class_id"
+				}
+			]
+		},
+		{
+			"name": "follow_up_class_name",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "follow_up_class_name"
+				}
+			]
+		},
+		{
+			"name": "follow_up_class_label",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "follow_up_class_label"
+				}
+			]
+		},
+		{
+			"name": "kyc_country_risk_indicator",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "kyc_country_risk_indicator"
+				}
+			]
+		},
+		{
+			"name": "blacklisted",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "blacklisted"
+				}
+			]
+		},
+		{
+			"name": "subAccount_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "sub_account"
+				}
+			]
+		},
+		{
+			"name": "fatca_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "fatca_status"
+				}
+			]
+		},
+		{
+			"name": "leading_country_indicator_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "fatca_leading_country_indicator"
+				}
+			]
+		},
+		{
+			"name": "detailed_status",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "fatca_detailed_status"
+				}
+			]
+		},
+		{
+			"name": "detailed_validation_date_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "fatca_detailed_validation_date"
+				}
+			]
+		},
+		{
+			"name": "detailed_expiry_date_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "fatca_detailed_expiry_date"
+				}
+			]
+		},
+		{
+			"name": "booking_country_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "fatca_booking_country"
+				}
+			]
+		},
+		{
+			"name": "notp_otp",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "typology"
+				}
+			]
+		},
+		{
+			"name": "sub_class",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "subclass"
+				}
+			]
+		},
+		{
+			"name": "active",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "active"
+				}
+			]
+		},
+		{
+			"name": "rct_id_le",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "rct_id_le"
+				}
+			]
+		},
+		{
+			"name": "liaisons_structures",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "int"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "structure_link"
+				}
+			]
+		},
+		{
+			"name": "primary_regulator_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "regulator_mnemonic"
+				}
+			]
+		},
+		{
+			"name": "kyc_regulated_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "kyc_regulated"
+				}
+			]
+		},
+		{
+			"name": "homeCountry",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "nat_country"
+				}
+			]
+		},
+		{
+			"name": "city_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "city"
+				}
+			]
+		},
+		{
+			"name": "client_type_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "client_type"
+				}
+			]
+		},
+		{
+			"name": "residence_country_el",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "bdr",
+					"fieldName": "res_country"
+				}
+			]
+		},
+		{
+			"name": "inactive_client_top",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "inactive_client_top"
+				}
+			]
+		},
+		{
+			"name": "incident_nature",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "incident_nature"
+				}
+			]
+		},
+		{
+			"name": "ind_risk_lab",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "ind_risk_lab"
+				}
+			]
+		},
+		{
+			"name": "ind_risk_lab_update_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "ind_risk_lab_update_date"
+				}
+			]
+		},
+		{
+			"name": "indiv_subtype",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "indiv_subtype"
+				}
+			]
+		},
+		{
+			"name": "interdict_bdf_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "interdict_bdf_code"
+				}
+			]
+		},
+		{
+              "name": "bddf_crs_status",
+              "type": [
+                  "null",
+                  {
+                      "type": "map",
+                      "values": "string"
+                  }
+              ],
+              "from": [
+                  {
+                      "dataSource": "grc_pm",
+                      "fieldName": "bddf_crs_status"
+                  }
+              ]
+      },
+		{
+              "name": "last_update_bddf_crs_status",
+              "type": [
+                  "null",
+                  {
+                      "type": "map",
+                      "values": "string"
+                  }
+              ],
+              "from": [
+                  {
+                      "dataSource": "grc_pm",
+                      "fieldName": "last_update_bddf_crs_status"
+                  }
+              ]
+      },
+		{
+              "name": "last_update_crs_status_monaco",
+              "type": [
+                  "null",
+                  {
+                      "type": "map",
+                      "values": "string"
+                  }
+              ],
+              "from": [
+                  {
+                      "dataSource": "grc_pm",
+                      "fieldName": "last_update_crs_status_monaco"
+                  }
+              ]
+      },
+		{
+              "name": "main_agency",
+              "type": [
+                  "null",
+                  {
+                      "type": "map",
+                      "values": "string"
+                  }
+              ],
+              "from": [
+                  {
+                      "dataSource": "grc_pm",
+                      "fieldName": "main_agency"
+                  }
+              ]
+      },
+		{
+              "name": "monaco_crs_status",
+              "type": [
+                  "null",
+                  {
+                      "type": "map",
+                      "values": "string"
+                  }
+              ],
+              "from": [
+                  {
+                      "dataSource": "grc_pm",
+                      "fieldName": "monaco_crs_status"
+                  }
+              ]
+      },
+		{
+			"name": "presta",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.grc_cav"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "presta"
+				}
+			]
+		},
+		{
+			"name": "customer_relationship_manager",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values":"sg.cbs.avro.grc_customer_relationship"
+				}
+
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "customer_relationship_manager"
+				}
+			]
+		},
+		{
+			"name": "chief_executive_officer",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values":"sg.cbs.avro.grc_chief_executive_officer"
+				}
+
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "chief_executive_officer"
+				}
+			]
+		},
+		{
+			"name": "ca_export_year",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "ca_export_year"
+				}
+			]
+		},
+		{
+			"name": "ca_ht",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "ca_ht"
+				}
+			]
+		},
+		{
+			"name": "client_incident",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "client_incident"
+				}
+			]
+		},
+		{
+			"name": "country_tax_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "country_tax_code"
+				}
+			]
+		},
+		{
+			"name": "currency_country_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "currency_country_code"
+				}
+			]
+		},
+		{
+			"name": "dom_top",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "dom_top"
+				}
+			]
+		},
+		{
+			"name": "nsm_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "nsm_code"
+				}
+			]
+		},
+		{
+			"name": "private_bank_top",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "private_bank_top"
+				}
+			]
+		},
+		{
+			"name": "private_bank_top_update_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "private_bank_top_update_date"
+				}
+			]
+		},
+		{
+			"name": "privileged_phone",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "privileged_phone"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "privileged_phone"
+				}
+			]
+		},
+		{
+			"name": "psa_code",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "psa_code"
+				}
+			]
+		},
+		{
+			"name": "rct_identifier",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "rct_identifier"
+				},
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "rct_identifier"
+				}
+			]
+		},
+		{
+			"name": "risk_loss_relationship",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "risk_loss_relationship"
+				}
+			]
+		},
+		{
+			"name": "risk_loss_relationship_date",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "risk_loss_relationship_date"
+				}
+			]
+		},
+		{
+			"name": "sbb_top",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "sbb_top"
+				}
+			]
+		},
+		{
+			"name": "sign_ca_export_year",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "sign_ca_export_year"
+				}
+			]
+		},
+		{
+			"name": "sign_ca_ht",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": "string"
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "sign_ca_ht"
+				}
+			]
+		},
+		{
+        	"name": "headquarters_address_diverse",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "headquarters_address_diverse"
+        		}
+        	]
+        },
+        {
+        	"name": "headquarters_address_diverse_suppl",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "headquarters_address_diverse_suppl"
+        		}
+        	]
+        },
+        {
+        	"name": "headquarters_address_title",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "headquarters_address_title"
+        		}
+        	]
+        },
+        {
+        	"name": "nationality_country_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "grc_pm",
+        			"fieldName": "nationality_country_code"
+        		}
+        	]
+        },
+
+		{
+			"name": "pm",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.grc_pm"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "grc_pm",
+					"fieldName": "pm"
+				}
+			]
+		},
+		{
+			"name": "ccl",
+			"type": [
+				"null",
+				{
+					"type": "map",
+					"values": {
+						"type": "array",
+						"items": "sg.cbs.avro.cercle"
+					}
+				}
+			],
+			"from": [
+				{
+					"dataSource": "privalia_pm",
+					"fieldName": "ccl"
+				}
+			]
+		},
+        {
+        	"name": "customer_segment",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "customer_segment"
+        		}
+        	]
+        },
+        {
+        	"name": "date_contact",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "date_contact"
+        		}
+        	]
+        },
+        {
+        	"name": "engagements_level",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "engagements_level"
+        		}
+        	]
+        },
+        {
+        	"name": "global_revenu",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "global_revenu"
+        		}
+        	]
+        },
+        {
+        	"name": "mif_profil_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "mif_profil_code"
+        		}
+        	]
+        },
+        {
+        	"name": "mif_profil_name",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "mif_profil_name"
+        		}
+        	]
+        },
+        {
+        	"name": "nace_rev_2",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "sg.cbs.avro.nace_rev_2"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "nace_rev_2_detail"
+        		},
+        		{
+        		    "dataSource":"avox",
+        		    "fieldName": "nace_rev_2"
+        		},
+                {
+                    "dataSource":"cz",
+                    "fieldName": "nace_rev_2"
+                },
+                {
+                    "dataSource":"sk",
+                    "fieldName": "nace_rev_2"
+                }
+        	]
+        },
+        {
+        	"name": "patrimoine_level",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "patrimoine_level"
+        		}
+        	]
+        },
+        {
+        	"name": "ppe_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "ppe_code"
+        		}
+        	]
+        },
+        {
+        	"name": "ppe_name",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "ppe_name"
+        		}
+        	]
+        },
+        {
+        	"name": "risk_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "risk_code"
+        		}
+        	]
+        },
+        {
+        	"name": "secteur_activite_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "secteur_activite_code"
+        		}
+        	]
+        },
+        {
+        	"name": "secteur_activite_name",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "secteur_activite_name"
+        		}
+        	]
+        },
+        {
+        	"name": "top_conformity_eer",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "top_conformity_eer"
+        		}
+        	]
+        },
+        {
+        	"name": "top_ppe",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "top_ppe"
+        		}
+        	]
+        },
+        {
+        	"name": "top_risk_complete",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "top_risk_complete"
+        		}
+        	]
+        },
+        {
+        	"name": "topgip",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "topgip"
+        		}
+        	]
+        },
+        {
+        	"name": "total_aum",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "total_aum"
+        		}
+        	]
+        },
+        {
+        	"name": "type_contact_code",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "type_contact_code"
+        		}
+        	]
+        },
+        {
+        	"name": "type_contact_name",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "privalia_pm",
+        			"fieldName": "type_contact_name"
+        		}
+        	]
+        },
+        {
+        	"name": "employees",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "sg.cbs.avro.rn.employees"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "cz",
+        			"fieldName": "employees"
+        		},
+        		{
+        			"dataSource": "sk",
+        			"fieldName": "employees"
+        		}
+        	]
+        },
+        {
+        	"name": "annual_sales",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "sg.cbs.avro.rn.annual_sales"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "cz",
+        			"fieldName": "annual_sales"
+        		},
+        		{
+        			"dataSource": "sk",
+        			"fieldName": "annual_sales"
+        		}
+        	]
+        },
+        {
+        	"name": "esa_2010",
+        	"type": [
+        		"null",
+        		{
+        			"type": "map",
+        			"values": "string"
+        		}
+        	],
+        	"from": [
+        		{
+        			"dataSource": "cz",
+        			"fieldName": "esa_2010"
+        		}
+        	]
+        }
+	]
+}

@@ -1,0 +1,97 @@
+// nom du dossier dans le repository dans lequel se trouve le projet
+final	String	DIRECTORY 			= 	'.'
+
+// valeur donnée par Sofa pour accéder à ses credentials AnsibleTower
+final	String	CREDENTIALS_ID 		= 	'jenkins_cbs_bv'
+
+// trigramme de votre projet
+final	String	TRIGRAMME 			= 	'CBS'
+
+// nom du job ansible
+final	String	ANSIBLE_JOB_NAME	= 	'JOB_HAD_CBS_BV_DD'
+
+final	String  ENV_DEPLOY = deployEnv("${env.BRANCH_NAME}")
+
+node ('linux')
+        {
+                deleteDir()
+
+                stage ("\u274B Checkout Sources on ${env.BRANCH_NAME}")
+                        {
+                                        properties([pipelineTriggers([[$class: 'GitHubPushTrigger']])])
+                                        checkout scm
+                                        sourceBranch="${env.BRANCH_NAME}"
+                                        echo "sourceBranch is ${sourceBranch}"
+                                        stash excludes: 'target/', includes: '**/*', name: 'source'
+                                        def pom = readMavenPom file: 'pom.xml'
+                                        currentBuild.displayName = pom.version
+
+                        }
+
+                stage ("\u274B Build/Compile")
+                        {
+                                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                                {
+                                                    unstash 'source'
+                                                    sh "mvn clean compile -DskipTests"
+                                                }
+                        }
+
+                stage ("\u274B Run Tests (Unit Tests)")
+                        {
+
+                                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                                {
+                                                    unstash 'source'
+                                                    sh "mvn clean test"
+                                                    junit allowEmptyResults: true, testResults: '**/target/surefire-reports/TEST-*.xml, **/target/test-reports/*.xml, **/test-results/*.xml'
+                                                }
+                        }
+
+                stage ("\u274B Run Code Source Analysis")
+                        {
+
+                                        def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                                        def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                                        withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                                {
+                                                    withSonarQubeEnv
+                                                            {
+                                                                unstash 'source'
+                                                                sh "mvn clean scoverage:report -Dmaven.test.failure.ignore -DskipTests"
+                                                                sh "mvn sonar:sonar -P sonar -Dsonar.branch=${env.BRANCH_NAME} -DskipTests"
+                                                            }
+                                                }
+                        }
+
+
+                if(ENV_DEPLOY != null) {
+                        stage ("\u274B Archive/Install Artifacts (Nexus)")
+                                {
+
+
+                                                def JAVA_HOME=tool name: 'jdk1.8', type: 'hudson.model.JDK'
+                                                def MAVEN_BUILD=tool name: 'maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                                                withEnv(["PATH+MAVEN=$MAVEN_BUILD/bin","PATH+JDK=$JAVA_HOME/bin"])
+                                                        {
+
+                                                             unstash 'source'
+                                                             sh "mvn clean deploy -P ${ENV_DEPLOY+",!local"} -DskipTests"
+
+                                                        }
+                                }
+                }
+
+        }
+
+def deployEnv(String branch)
+{
+    String[] deployArgs = branch.split("/")
+    if(deployArgs[0] == "deploys"){
+        return deployArgs[1]
+    }
+}

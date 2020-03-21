@@ -1,0 +1,71 @@
+DROP TABLE IF EXISTS ${hivevar:cbsBase}.avox_audit_bv;
+CREATE EXTERNAL TABLE ${hivevar:cbsBase}.avox_audit_bv
+  (avid STRING, client_record_id STRING, data_source STRING, date_verified STRING, field_name STRING, source_url STRING)
+PARTITIONED BY (yyyy STRING, mm STRING, dd STRING)
+STORED AS PARQUET
+LOCATION '${hivevar:hdfsDataOutputLocation}/avox_audit_bv';
+
+DROP TABLE IF EXISTS ${hivevar:cbsBase}.avox_le_bv;
+CREATE EXTERNAL TABLE ${hivevar:cbsBase}.avox_le_bv(
+  avid string,
+ client_type string,
+ company_website string,
+ date_of_dissolution string,
+ dest_country string,
+ entity_type string,
+ headquarters_address string,
+ identifier string,
+ immediate_parent_avid string,
+ immediate_parent_country string,
+ immediate_parent_name string,
+ legal_form string,
+ legal_name_90c string,
+ legal_situation_code string,
+ lei_id string,
+ lei_lou_id string,
+ lou_status string,
+ nace_code string,
+ naics_2002_code string,
+ naics_2012_code string,
+ operational_address string,
+ other_national_id string,
+ previous_name_1 string,
+ previous_name_2 string,
+ previous_name_3 string,
+ previous_name_4 string,
+ previous_name_5 string,
+ previous_name_6 string,
+ previous_name_7 string,
+ previous_name_8 string,
+ previous_name_9 string,
+ previous_name_10 string,
+ previous_name_11 string,
+ registered_agent_name string,
+ regulated_by string,
+ regulatory_id string,
+ sic_code_1987 string,
+ sic_descr_1987 string,
+ siren_identifier string,
+ swift_number string,
+ tax_id string,
+ trade_as_name_1 string,
+ trade_as_name_2 string,
+ trade_as_name_3 string,
+ trade_as_name_4 string,
+ trade_as_name_5 string,
+ trade_as_name_6 string,
+ trade_as_name_7 string,
+ trade_as_name_8 string,
+ trade_as_name_9 string,
+ trade_as_name_10 string,
+ trade_as_name_11 string,
+ ultimate_parent_avid string,
+ ultimate_parent_country string,
+ ultimate_parent_name string,
+ city string,
+ id string,
+ nace_rev_2 struct<section:string,division:string,groupe:string,classe:string,sous_classe:string>,
+ duplicates_count bigint)
+PARTITIONED BY (yyyy STRING, mm STRING, dd String)
+STORED AS PARQUET
+LOCATION '${hivevar:hdfsDataOutputLocation}/avox_le_bv';

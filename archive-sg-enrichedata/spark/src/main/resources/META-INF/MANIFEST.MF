@@ -1,0 +1,1 @@
+GIT-Revision: ${buildNumber}

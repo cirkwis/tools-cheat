@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "name": "annual_sales",
+  "namespace": "sg.cbs.avro.rn",
+  "fields": [
+    {
+      "name": "local_range_year",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "local_range_low",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "local_range_high",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "local_range_currency",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}
